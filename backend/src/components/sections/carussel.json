@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_carussels",
+  "info": {
+    "displayName": "carussel"
+  },
+  "options": {},
+  "attributes": {
+    "baner": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.banner"
+    }
+  }
+}

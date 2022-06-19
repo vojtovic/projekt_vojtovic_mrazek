@@ -5,23 +5,19 @@
     "singularName": "homepage",
     "pluralName": "homepages",
     "displayName": "Homepage",
-    "name": "homepage"
+    "name": "homepage",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
-    "seo": {
+    "carusel": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
-    },
-    "hero": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.hero",
-      "required": true
+      "repeatable": true,
+      "component": "sections.carussel"
     }
   }
 }
