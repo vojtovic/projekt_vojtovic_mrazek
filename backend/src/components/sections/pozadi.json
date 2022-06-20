@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_pozadis",
+  "info": {
+    "displayName": "pozadi"
+  },
+  "options": {},
+  "attributes": {
+    "pozadi": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

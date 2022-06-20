@@ -18,6 +18,21 @@
       "type": "component",
       "repeatable": true,
       "component": "sections.carussel"
+    },
+    "Header": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.header"
+    },
+    "pozadi": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.pozadi"
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.footer"
     }
   }
 }

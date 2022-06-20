@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_sections_footers",
+  "info": {
+    "displayName": "footer"
+  },
+  "options": {},
+  "attributes": {
+    "footer": {
+      "type": "string"
+    }
+  }
+}
