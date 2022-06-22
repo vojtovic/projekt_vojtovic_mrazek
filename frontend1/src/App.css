@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 
 .App-logo {
@@ -48,10 +49,13 @@
   }
 }
 .container{
-  padding: 0!important;
-  margin: 0!important;
+  
+  
   font-size: 20px;
 }
 .pismo{
   font-size: 30px;
+}
+body{
+  background-color: black!important;
 }

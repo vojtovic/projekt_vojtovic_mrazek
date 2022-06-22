@@ -34,6 +34,14 @@ query Article($id: ID!) {
               }
             }
           }
+          category{
+            data{
+              id
+              attributes{
+                name
+              }
+            }
+          }
           den_pridani
         }
       }
@@ -64,14 +72,15 @@ export default function Articles() {
     <Row>
       {/* V nadpisu se zobrazí titulek */}
       <div className="vetsipismo">
-      <h2 className="text-danger bg-light p-3 m-3 text-center">
+      <h1 className="text-danger bg-light p-3 m-3 text-center">
         {article.attributes.title}
-      </h2>
+      </h1>
       </div>
+      <h2 className="text-white p-3">{article.attributes.description}</h2>
       {/* V odstavci pod nadpisem se zobrazí dostupné informace o autorovi článku (nick a email) a připojí se připravené datum publikování. */}
       <div className="vetsipismo">
       <p className="small text-center text-secondary mb-4">
-        publikováno: <b>{releasedDate}</b>
+        
       </p>
       </div>
       <Col>
@@ -79,6 +88,7 @@ export default function Articles() {
             který je známý např. z gitu (README.md), k správnému zobrazování upravených částí textu použijeme externí komponentu ReactMarkdown a plugin
             remarkGfm (obojí je třeba nejprve nainstalovat: npm install react-markdown remark-gfm). Nesmíme je zapomenout importovat. */}
       </Col>
+      
       <Col>
         {/* V případě, že k článku existuje doprovodný obrázek ... */}
         {article.attributes.fotka.data && (
@@ -89,17 +99,22 @@ export default function Articles() {
               src={"http://localhost:1337"+article.attributes.fotka.data.attributes.url}
               rounded
             />
+            
             {/* K popisu pod obrázkem použijeme titulek článku. */}
             <Figure.Caption>Obrázek: {article.attributes.title}</Figure.Caption>
           </Figure>
         )}
         
-        <h4 className="bg-danger text-white p-3">Předměty</h4>
+        <h4 className="text-white p-3" style= {{fontSize:'10px'}}>{article.attributes.hlavni_text}</h4>
+        publikováno: <b>{releasedDate}</b>
+      
+        
         {/* React-bootstrap komponentu ListGroup (viz https://react-bootstrap.github.io/components/list-group/) použijeme k vypsání všech předmětů/kategorií,
             do nichž byl článek zařazen. */}
         
       </Col>
     </Row>
+    článek spadá pod kategorii: <h4 className=" p-3" style= {{fontSize:'10px'}}>{article.attributes.category.data.attributes.name}</h4>
     </div>
   );
 }
