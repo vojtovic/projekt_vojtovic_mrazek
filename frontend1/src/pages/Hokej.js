@@ -8,40 +8,44 @@ import Image from 'react-bootstrap/Image'
 export default function Homepage() {
 const HOMEPAGE = gql`
 query Articles{
-  articles{
-      data{
-        id
-        attributes{
-          title
-          description
-          fotka{
-            data{
-              attributes{
-                url
+    articles(filters:
+    {
+    category:{zkratka: {eq:"LH"}}  
+    })
+    {
+        data{
+          id
+          attributes{
+            title
+            description
+            fotka{
+              data{
+                attributes{
+                  url
+                }
               }
             }
-          }
-          hlavni_text
-          nadpis_videa
-          video{
-            data{
-              attributes{
-                url
+            hlavni_text
+            nadpis_videa
+            video{
+              data{
+                attributes{
+                  url
+                }
               }
             }
-          }
-          den_pridani
-          category{
-            data{
-              id
-              attributes{
-                name
+            den_pridani
+            category{
+              data{
+                id
+                attributes{
+                  name
+                }
               }
             }
           }
         }
       }
-    }
   }
 `
 
@@ -53,6 +57,7 @@ const { data, loading, error } = useQuery(HOMEPAGE)
     return (
       <Container fluid>
         <Col>
+          <title>ZAPASY</title>
         </Col>
         <Row xs={1} sm={2} md={3} lg={5}>
           {data.articles.data.map((item, index) => {

@@ -69,6 +69,7 @@ export default function Articles() {
   const releasedDate = new Date(article.attributes.den_pridani.split("-")).toLocaleDateString();
   return (
     <div className="vetsipismo">
+      
     <Row>
       {/* V nadpisu se zobrazí titulek */}
       <div className="vetsipismo">
@@ -106,15 +107,30 @@ export default function Articles() {
         )}
         
         <h4 className="text-white p-3" style= {{fontSize:'10px'}}>{article.attributes.hlavni_text}</h4>
+
+        <video width="320" height="240" controls>
+          <source src={"http://localhost:1337"+article.attributes.video.data.attributes.url} type="video/mp4"></source>
+          Your browser does not support the video tag.
+        </video>
+        <br></br>
+        <div style={{color:'white'}}>
+        <div style={{fontSize:'15px'}}>
+        Video: <b>{article.attributes.nadpis_videa}</b>
+        </div>
+        <br></br>
         publikováno: <b>{releasedDate}</b>
-      
+        </div>
         
         {/* React-bootstrap komponentu ListGroup (viz https://react-bootstrap.github.io/components/list-group/) použijeme k vypsání všech předmětů/kategorií,
             do nichž byl článek zařazen. */}
         
       </Col>
+      
     </Row>
+    <div style={{color:'white'}}>
     článek spadá pod kategorii: <h4 className=" p-3" style= {{fontSize:'10px'}}>{article.attributes.category.data.attributes.name}</h4>
     </div>
+    </div>
+    
   );
 }

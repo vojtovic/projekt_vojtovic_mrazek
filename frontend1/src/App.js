@@ -33,6 +33,10 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer'; 
 import Articles from './pages/Articles';
 import ArticleDetail from './pages/ArticleDetail';
+import Hokej from './pages/Hokej';
+import Vodnislalom from './pages/Vodnislalom';
+import Horolezectvi from './pages/Horolezectvi';
+import Volejbal from './pages/Volejbal';
 
 
  
@@ -79,6 +83,10 @@ function App() {
             <div className="pismo text-center">
           <Routes> 
             <Route path="/" element={<Homepage />} />
+            <Route path="/lednihokej" element={<Hokej />} />
+            <Route path="/vodnislalom" element={<Vodnislalom />} />
+            <Route path="/horolezectvi" element={<Horolezectvi />} />
+            <Route path="/volejbal" element={<Volejbal/>} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/articles/:id" element={<ArticleDetail />} />            
 

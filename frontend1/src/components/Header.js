@@ -30,18 +30,31 @@ export const Header = (props) => {
             <p style={{fontSize: '20px'}}>{text2}</p>
             </div>
             
+            <div className="topnav" id="myTopnav">
+  <a href="http://localhost:3000">Všechny články</a>
+  <a href="http://localhost:3000/lednihokej">Lední Hokej</a>
+  <a href="http://localhost:3000/vodnislalom">Vodní slalom</a>
+  <a href="http://localhost:3000/horolezectvi">Horolezectví</a>
+  <a href="http://localhost:3000/volejbal">Volejbal</a>
+  <a href="javascript:void(0);" className="icon" onclick="myFunction()">
+    <i className="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+
         </header> 
 
     ); 
 
 } 
 
-
 function myFunction() {
-    var x = document.getElementById("myNavbar");
-    if (x.className === "navbar") {
-      x.className += " responsive";
-    } else {
-      x.className = "navbar";
-    }
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
   }
+}
